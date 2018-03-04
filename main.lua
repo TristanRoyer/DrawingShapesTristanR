@@ -11,78 +11,90 @@
  display.setStatusBar(display.HiddenStatusBar)
 
  -- Create my local variables
- local myCircle
- local myRectangle
- local myRectangle2
- local myRectangleWidth = 100
- local myRectangleHeight = 100
- local myRectangle2Width = 100
- local myRectangleHeight = 100
+ local myWarningSign
+ local textMyWarningSign
+ local textMyWarningSignSize = 60
+ local textMyWarningSignName
+ local textMyWarningSignNameSize = 10
+ local areaMyWarningSign
+ local myWarningSignBase = 10
+ local myWarningSignHeight = 15
+ local areaTextWarning
+ local areaTextWarningSize = 10
+ local areaOfWarningSign = myWarningSignBase * myWarningSignHeight
  local myTriangle 
  local myQuadrilateral 
  local myHeptagon
- local myHexagon
- local textSizeTriangle = 30
+ local myOctogon
+ local textSizeTriangle = 15
  local textTriangle
  local textQuadrilateral
- local textSizeQuadrilateral = 30
- local textHexagon
- local textSizehexagon = 30
+ local textSizeQuadrilateral = 10
+ local textOctogon
+ local textSizeOctogon = 10    
  local textHeptagon
- local textSizeHeptagon = 30
-
- -- set the x and y positons of the vertices of the shapes
+ local textSizeHeptagon = 10
  local verticesTriangle = {0,50, 60,-50, 120,50}
  local verticesQuadrilateral = {130,50, 200,-65, 200,75, 170,80}
- local verticesHexagon = {}
- local verticesHeptagon = {}
+ local verticesOctogon = {215,50, 250,50, 270,30, 270,10, 250,-10, 215,-10, 200,10, 200,30}
+ local verticesHeptagon = {300,50, 285,30, 285,10, 320,-10, 355,10, 355,35, 345,50}
+ local verticesMyWarningSign = {0,50, 80,50, 40,-50}
+ local halfW = display.contentWidth * 0.5
+ local halfH = display.contentHeight * 0.5
+ local myTriangle =  display.newPolygon( 50, halfW, verticesTriangle )
+ local myQuadrilateral = display.newPolygon(150, halfW,verticesQuadrilateral)
+ local myOctogon = display.newPolygon(240,halfW,verticesOctogon)
+ local myHeptagon = display.newPolygon(330,halfW,verticesHeptagon)
+ local myWarningSign = display.newPolygon(80,100,verticesMyWarningSign)
 
---sets the base to be half of the width and the height
-local halfW = display.contentWidth * 0.5
-local halfH = display.contentHeight * 0.5
  
---Displays the Triangle
-local myTriangle =  display.newPolygon( 50, halfW, verticesTriangle )
-
---Displays the Quadrilateral
-local myQuadrilateral = display.newPolygon(160, halfW,verticesQuadrilateral)
-
---Displays the hexagon
-local myHexagon = display.newPolygon(0,halfW,verticesHexagon)
-
---Displays the Heptagon
-local myHeptagon = display.newPolygon(0,halfW,verticesHeptagon)
-
 --sets the stroke width
- myTriangle.strokeWidth = 5
+ myTriangle.strokeWidth = 3
  myQuadrilateral.strokeWidth = 3
- myHexagon.strokeWidth = 3
+ myOctogon.strokeWidth = 3
  myHeptagon.strokeWidth = 3
+ myWarningSign.stokeWidth = 3
+ 
 
 --sets the stroke colour
  myTriangle:setStrokeColor( 1, 0, 0 )
- myQuadrilateral:setStrokeColor(0, 0, 0)
- myHexagon:setStrokeColor(0, 0, 0)
- myPentagon:setStrokeColor(0, 0, 0)
+ myQuadrilateral:setStrokeColor(0, 0, 1)
+ myOctogon:setStrokeColor(100/255, 55/255, 17/255)
+ myHeptagon:setStrokeColor(1, 0, 1)
+ myWarningSign:setStrokeColor(1, 0, 0)
+ 
+
 
 --sets the fill colour of the shapes
 myTriangle:setFillColor(1, 0, 1)
 myQuadrilateral:setFillColor(1, 1, 0)
-myHexagon:setFillColor(0, 1, 0)
-myHeptagon:setFillColor(0, 1, 1)
+myOctogon:setFillColor(0, 0, 0)
+myHeptagon:setFillColor(100/255, 0/255, 15/255)
+myWarningSign:setFillColor(1,1,1)
+
+
 
 -- Displays the Triangle's Text
-textTriangle = display.newText("Triangle",55,315, Arial, textSizeTriangle)
-textTriangle:setFillColor(0,0,0)
+textTriangle = display.newText("Triangle",60,315, Arial, textSizeTriangle)
+textTriangle:setFillColor(1, 0, 1)
 
 -- Displays the Quadrilateral's text
-textQuadrilateral = display.newText("Quadrilateral",140,315, Arial, textSizeQuadrilateral)
-textQuadrilateral:setFillColor(0,0,0)
+textQuadrilateral = display.newText("Quadrilateral",155,320, Arial, textSizeQuadrilateral)
+textQuadrilateral:setFillColor(1, 1, 0)
 
 --displays the Hexagon's text
-textHexagon = display.newText("Hexagon",0,0 Arial, textSizehexagon)
-textHexagon:setFillColor(0,0,0)
+textOctogon = display.newText("Octogon",240,285, Arial, textSizeOctogon)
+textOctogon:setFillColor(0,0,0)
 
---Displats the Heptagon's text
-textHeptagon = display.newText("Heptagon",0,0 Arial, textSizeheptagon)
-textHeptagon:setFillColor(0,0,0)
+--Displays the Heptagon's text
+textHeptagon = display.newText("Heptagon",330,280, Arial, textSizeHeptagon)
+textHeptagon:setFillColor(100/255, 0/255, 15/255)
+
+-- Displays (!) for the WarningSign
+textMyWarningSign = display.newText("!",80,100, Arial, textMyWarningSignSize)
+textMyWarningSign:setFillColor(0,0,0)
+textMyWarningSignName = display.newText("WarningSign",80,160,Arial,textMyWarningSignNameSize)
+textMyWarningSignName:setFillColor(0,0,0)
+areaTextWarning = display.newText("The area of this Sign with a base of " .. myWarningSignBase..
+	" and a height of ".. myWarningSignHeight .. " is " .. areaOfWarningSign .. " pixels^2", 300,100,Arial,areaTextWarningSize )
+
