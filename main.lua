@@ -4,8 +4,8 @@
 -- This program displays different Polygons in Lua 
 
 
--- Set the colour of the background
- display.setDefault("background", 0/255, 200/255, 150/255)
+-- Sets the background of the Program 
+display.setDefault("background",0/255, 200/255, 255/255)
 
  -- Remove the status Bar
  display.setStatusBar(display.HiddenStatusBar)
@@ -52,10 +52,10 @@
  local verticesMyWarningSign = {0,50, 80,50, 40,-50}
 
  --displays the shapes
- local myTriangle =  display.newPolygon( 50, halfW, verticesTriangle )
- local myQuadrilateral = display.newPolygon(150, halfW,verticesQuadrilateral)
- local myOctogon = display.newPolygon(240,halfW,verticesOctogon)
- local myHeptagon = display.newPolygon(330,halfW,verticesHeptagon)
+ local myTriangle =  display.newPolygon(70, halfW, verticesTriangle )
+ local myQuadrilateral = display.newPolygon(170, halfW,verticesQuadrilateral)
+ local myOctogon = display.newPolygon(260,halfW,verticesOctogon)
+ local myHeptagon = display.newPolygon(350,halfW,verticesHeptagon)
  local myWarningSign = display.newPolygon(80,100,verticesMyWarningSign)
  
 --sets the stroke width 
@@ -85,19 +85,19 @@ myWarningSign:setFillColor(1,1,1)
 
 
 -- Displays the Triangle's Text
-textTriangle = display.newText("Triangle",60,315, Arial, textSizeTriangle)
+textTriangle = display.newText("Triangle",80,315, Arial, textSizeTriangle)
 textTriangle:setFillColor(1, 0, 1)
 
 -- Displays the Quadrilateral's text
-textQuadrilateral = display.newText("Quadrilateral",155,320, Arial, textSizeQuadrilateral)
+textQuadrilateral = display.newText("Quadrilateral",175,320, Arial, textSizeQuadrilateral)
 textQuadrilateral:setFillColor(1, 1, 0)
 
 --displays the Hexagon's text
-textOctogon = display.newText("Octogon",240,285, Arial, textSizeOctogon)
+textOctogon = display.newText("Octogon",260,285, Arial, textSizeOctogon)
 textOctogon:setFillColor(0,0,0)
 
 --Displays the Heptagon's text
-textHeptagon = display.newText("Heptagon",330,280, Arial, textSizeHeptagon)
+textHeptagon = display.newText("Heptagon",350,280, Arial, textSizeHeptagon)
 textHeptagon:setFillColor(100/255, 0/255, 15/255)
 
 -- Displays the Warning Sign's text
