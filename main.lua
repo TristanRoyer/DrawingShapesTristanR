@@ -21,10 +21,10 @@
  local myWarningSignHeight = 15
  local areaTextWarning
  local areaTextWarningSize = 10
- local areaOfWarningSign = myWarningSignBase * myWarningSignHeight
- local signSide1 = 5
- local signSide2 = 7
- local signSide3 = 8
+ local areaOfWarningSign = myWarningSignBase * myWarningSignHeight / 2
+ local signSide1 = 10
+ local signSide2 = 10
+ local signSide3 = 10
  local SignPerimeter
  local SignPerimeter = signSide1 + signSide2 + signSide3
  local textPerimeterSign
@@ -41,21 +41,24 @@
  local textSizeOctogon = 10    
  local textHeptagon
  local textSizeHeptagon = 10
+ local halfW = display.contentWidth * 0.5
+ local halfH = display.contentHeight * 0.5
+ 
+ -- Sets the co-ordinates of the vertices for the shapes
  local verticesTriangle = {0,50, 60,-50, 120,50}
  local verticesQuadrilateral = {130,50, 200,-65, 200,75, 170,80}
  local verticesOctogon = {215,50, 250,50, 270,30, 270,10, 250,-10, 215,-10, 200,10, 200,30}
  local verticesHeptagon = {300,50, 285,30, 285,10, 320,-10, 355,10, 355,35, 345,50}
  local verticesMyWarningSign = {0,50, 80,50, 40,-50}
- local halfW = display.contentWidth * 0.5
- local halfH = display.contentHeight * 0.5
+
+ --displays the shapes
  local myTriangle =  display.newPolygon( 50, halfW, verticesTriangle )
  local myQuadrilateral = display.newPolygon(150, halfW,verticesQuadrilateral)
  local myOctogon = display.newPolygon(240,halfW,verticesOctogon)
  local myHeptagon = display.newPolygon(330,halfW,verticesHeptagon)
  local myWarningSign = display.newPolygon(80,100,verticesMyWarningSign)
-
  
---sets the stroke width
+--sets the stroke width 
  myTriangle.strokeWidth = 3
  myQuadrilateral.strokeWidth = 3
  myOctogon.strokeWidth = 3
