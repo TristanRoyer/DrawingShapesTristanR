@@ -21,10 +21,10 @@
  local myWarningSignHeight = 15
  local areaTextWarning
  local areaTextWarningSize = 10
- local areaOfWarningSign = myWarningSignBase * myWarningSignHeight
- local signSide1 = 5
- local signSide2 = 7
- local signSide3 = 8
+ local areaOfWarningSign = myWarningSignBase * myWarningSignHeight / 2
+ local signSide1 = 10
+ local signSide2 = 10
+ local signSide3 = 10
  local SignPerimeter
  local SignPerimeter = signSide1 + signSide2 + signSide3
  local textPerimeterSign
