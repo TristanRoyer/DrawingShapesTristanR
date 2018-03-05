@@ -16,12 +16,19 @@
  local textMyWarningSignSize = 60
  local textMyWarningSignName
  local textMyWarningSignNameSize = 10
- local areaMyWarningSign
+ local areaOfWarningSign
  local myWarningSignBase = 10
  local myWarningSignHeight = 15
  local areaTextWarning
  local areaTextWarningSize = 10
  local areaOfWarningSign = myWarningSignBase * myWarningSignHeight
+ local signSide1 = 5
+ local signSide2 = 7
+ local signSide3 = 8
+ local SignPerimeter
+ local SignPerimeter = signSide1 + signSide2 + signSide3
+ local textPerimeterSign
+ local textPerimeterSignSize = 10
  local myTriangle 
  local myQuadrilateral 
  local myHeptagon
@@ -95,6 +102,13 @@ textMyWarningSign = display.newText("!",80,100, Arial, textMyWarningSignSize)
 textMyWarningSign:setFillColor(0,0,0)
 textMyWarningSignName = display.newText("WarningSign",80,160,Arial,textMyWarningSignNameSize)
 textMyWarningSignName:setFillColor(0,0,0)
-areaTextWarning = display.newText("The area of this Sign with a base of " .. myWarningSignBase..
-	" and a height of ".. myWarningSignHeight .. " is " .. areaOfWarningSign .. " pixels^2", 300,100,Arial,areaTextWarningSize )
+areaTextWarning = display.newText("The area of this Sign with a base of " .. myWarningSignBase .. 
+	" and a height of ".. myWarningSignHeight .. " is " 
+	.. areaOfWarningSign .. " pixels^2", 300,100,Arial,areaTextWarningSize )
+ textPerimeterSign = display.newText("The Perimeter of this shape with sides of " .. signSide1 ..
+ 	" , " .. signSide2 ..  " and "
+	.. signSide3 .. " is " .. SignPerimeter .. " pixels",300,130,Arial,textPerimeterSignSize)
 
+--Sets the stroke width and colour of the warning sign.
+myWarningSign.strokeWidth = 4
+myWarningSign:setStrokeColor(1,0,0)
