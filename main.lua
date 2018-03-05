@@ -97,7 +97,7 @@ textOctogon:setFillColor(0,0,0)
 textHeptagon = display.newText("Heptagon",330,280, Arial, textSizeHeptagon)
 textHeptagon:setFillColor(100/255, 0/255, 15/255)
 
--- Displays (!) for the WarningSign
+-- Displays the Warning Sign's text
 textMyWarningSign = display.newText("!",80,100, Arial, textMyWarningSignSize)
 textMyWarningSign:setFillColor(0,0,0)
 textMyWarningSignName = display.newText("WarningSign",80,160,Arial,textMyWarningSignNameSize)
